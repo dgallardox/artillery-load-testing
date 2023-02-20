@@ -1,4 +1,4 @@
 # GraphQL: Artillery Load Testing
 
 ### start script
-artillery run graphql.yml
+`artillery run graphql.yml`
