@@ -1,0 +1,26 @@
+config:
+# endpoint to load test
+  target: "https://cms.dailybyte.org/graphql"
+# duration and number per second
+  phases:
+    - duration: 60
+      arrivalRate: 60
+      name: "load tester"
+
+# specific query to be made
+scenarios:
+- name: "get all posts"
+  flow: 
+    - post:
+        url: "/"
+        json:
+            query: |
+              query getAllPosts {
+                posts {
+                  nodes {
+                    title
+                    content
+                    uri
+                    }
+                  }
+                }
